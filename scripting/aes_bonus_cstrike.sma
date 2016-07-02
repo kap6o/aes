@@ -20,7 +20,7 @@
 #define VERSION "0.4"
 #define AUTHOR "serfreeman1337"
 
-// биты? да это же круто!
+// ГЎГЁГІГ»? Г¤Г  ГЅГІГ® Г¦ГҐ ГЄГ°ГіГІГ®!
 enum _:{
 	SUPER_NICHEGO,
 	SUPER_NADE,
@@ -106,14 +106,14 @@ public aes_on_anew_command(id){
 
 public client_disconnect(id){
 	g_fBuyTime[id] = 0.0
-	g_players[id] = SUPER_NICHEGO // сбрасываем возможности на дисконнекте
+	g_players[id] = SUPER_NICHEGO // Г±ГЎГ°Г Г±Г»ГўГ ГҐГ¬ ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГЁ Г­Г  Г¤ГЁГ±ГЄГ®Г­Г­ГҐГЄГІГҐ
 }
 
 public On_Player_Spawn(id)
 	g_fBuyTime[id] = get_gametime() + 60 * get_pcvar_float(buyTimePointer)
 
 public On_Player_Killed(id)
-	g_players[id] = SUPER_NICHEGO // сбрасываем возможности при смерти
+	g_players[id] = SUPER_NICHEGO // Г±ГЎГ°Г Г±Г»ГўГ ГҐГ¬ ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГЁ ГЇГ°ГЁ Г±Г¬ГҐГ°ГІГЁ
 
 public On_Player_TakeDamage(victim,idinflictor,idattacker,Float:damage,damagebits){
 	if(!idattacker || idattacker > g_maxplayers)
@@ -141,7 +141,7 @@ public On_Player_TakeDamage(victim,idinflictor,idattacker,Float:damage,damagebit
 	return HAM_IGNORED
 }
 
-// сбарсываем множитель урона гранаты
+// Г±ГЎГ Г°Г±Г»ГўГ ГҐГ¬ Г¬Г­Г®Г¦ГЁГІГҐГ«Гј ГіГ°Г®Г­Г  ГЈГ°Г Г­Г ГІГ»
 public deSetNade(id)
 	g_players[id] &= ~(1<<SUPER_NADE)
 
@@ -237,11 +237,11 @@ public pointBonus_Give10000M(id){
 	return 1
 }
 
-public pointBonus_Set200HP(id){
+public pointBonus_Set120HP(id){
 	CHECK_ALIVE(id)
 	CHECK_ROUNDTIME(id)
 	
-	fm_set_user_health(id,200)
+	fm_set_user_health(id,120)
 	
 	return 1
 }
@@ -267,7 +267,7 @@ public pointBonus_GiveMegaDeagle(id){
 	DropWeaponSlot(id,2)
 	
 	fm_give_item(id,"weapon_deagle")
-	cs_set_user_bpammo(id,CSW_DEAGLE,35) // какой максимум?
+	cs_set_user_bpammo(id,CSW_DEAGLE,35) // ГЄГ ГЄГ®Г© Г¬Г ГЄГ±ГЁГ¬ГіГ¬?
 	
 	g_players[id] |= (1<<SUPER_DEAGLE)
 	
